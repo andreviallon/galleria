@@ -30,15 +30,18 @@ export const Header = () => {
   };
 
   return (
-    <div className="flex justify-between w-full">
-      <Image
-        src="/logo.svg"
-        alt="Logo"
-        layout="fixed"
-        width={150}
-        height={48}
-      />
-      {slideshowBtn()}
+    <div>
+      <div className="flex justify-between w-full">
+        <Image
+          src="/logo.svg"
+          alt="Logo"
+          layout="fixed"
+          width={150}
+          height={48}
+        />
+        {slideshowBtn()}
+      </div>
+      <hr className="my-8 text-gray-regular" />
     </div>
   );
 };
