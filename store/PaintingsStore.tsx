@@ -10,6 +10,7 @@ import { PaintingsReducer } from "./PaintingsReducer";
 export const paintingsContext = createContext({} as PaintingsContextType);
 
 export const initialState: PaintingsState = {
+  paintings: [],
   isSlideshowPlaying: false,
 };
 

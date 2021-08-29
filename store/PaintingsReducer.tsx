@@ -9,9 +9,9 @@ export const PaintingsReducer = (
   action: PaintingsActionType
 ) => {
   switch (action.type) {
-    case PAINTINGS_ACTION.START:
+    case PAINTINGS_ACTION.START_SLIDESHOW:
       return { ...state, isPaintingsPlaying: true };
-    case PAINTINGS_ACTION.EXIT:
+    case PAINTINGS_ACTION.EXIT_SLIDESHOW:
       return { ...state, isPaintingsPlaying: false };
     default:
       return state;

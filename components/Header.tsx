@@ -7,11 +7,11 @@ export const Header = () => {
   const { paintingsState, dispatch } = useContext(paintingsContext);
 
   const startPaintings = () => {
-    dispatch({ type: PAINTINGS_ACTION.START });
+    dispatch({ type: PAINTINGS_ACTION.START_SLIDESHOW });
   };
 
   const exitPaintings = () => {
-    dispatch({ type: PAINTINGS_ACTION.EXIT });
+    dispatch({ type: PAINTINGS_ACTION.EXIT_SLIDESHOW });
   };
 
   const classes =
