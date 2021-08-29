@@ -1,21 +1,34 @@
 import Image from "next/image";
+import { useContext } from "react";
+import { SLIDESHOW_ACTION } from "../store/SlideshowActions";
+import { slideshowContext } from "../store/SlideshowStore";
 
-interface Props {
-  isSlideShowMode: boolean;
-}
+export const Header = () => {
+  const { slideshowState, dispatch } = useContext(slideshowContext);
 
-const classes =
-  "flex items-center tracking-widest cursor-pointer uppercase font-bold text-xs text-black hover:text-gray-dark";
+  const startSlideshow = () => {
+    dispatch({ type: SLIDESHOW_ACTION.START });
+  };
 
-const slideshowBtn = (isSlideShowMode: boolean) => {
-  return isSlideShowMode ? (
-    <a className={classes}>Exit Slideshow</a>
-  ) : (
-    <a className={classes}>Start Slideshow</a>
-  );
-};
+  const exitSlideshow = () => {
+    dispatch({ type: SLIDESHOW_ACTION.EXIT });
+  };
 
-export const Header: React.FC<Props> = ({ isSlideShowMode }) => {
+  const classes =
+    "flex items-center tracking-widest cursor-pointer uppercase font-bold text-xs text-gray-dark hover:text-black";
+
+  const slideshowBtn = () => {
+    return slideshowState.isSlideshowPlaying ? (
+      <a className={classes} onClick={exitSlideshow}>
+        Exit Slideshow
+      </a>
+    ) : (
+      <a className={classes} onClick={startSlideshow}>
+        Start Slideshow
+      </a>
+    );
+  };
+
   return (
     <div className="flex justify-between w-full">
       <Image
@@ -25,7 +38,7 @@ export const Header: React.FC<Props> = ({ isSlideShowMode }) => {
         width={150}
         height={48}
       />
-      {slideshowBtn(isSlideShowMode)}
+      {slideshowBtn()}
     </div>
   );
 };
