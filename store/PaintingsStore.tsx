@@ -12,6 +12,7 @@ export const paintingsContext = createContext({} as PaintingsContextType);
 
 export const initialState: PaintingsState = {
   paintings: paintings,
+  selectedPainting: undefined,
   isSlideshowPlaying: false,
 };
 
