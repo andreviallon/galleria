@@ -2,15 +2,15 @@ import { AppProps } from "next/app";
 import "tailwindcss/tailwind.css";
 import "../styles/globals.css";
 import Layout from "../components/Layout";
-import { SlideshowContext } from "../store/SlideshowStore";
+import { PaintingsContext } from "../store/PaintingsStore";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <SlideshowContext>
+    <PaintingsContext>
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    </SlideshowContext>
+    </PaintingsContext>
   );
 }
 
